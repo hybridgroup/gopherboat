@@ -13,13 +13,13 @@ TinyGo-powered bottle boat.
 
 ## Controller
 
-Microcontroller, such as Adafruit Metro M4 Airlift (ATSAMD51 microcontroller with onboard ESP32 WiFi)
-WiFi co-processor such as ESP32 (already onboard the Adafruit Metro M4 Airlift)
-Arduino Motor Controller
-2 DC Motors
-2 propellers (clockwise, 1 counterclockwise)
-Adafruit Ultimate GPS UART
-Adafruit I2C Digital Compass
+- Microcontroller, such as Adafruit Metro M4 Airlift (ATSAMD51 microcontroller with onboard ESP32 WiFi)
+- WiFi co-processor such as ESP32 (already onboard the Adafruit Metro M4 Airlift)
+- Arduino Motor Controller
+- 2 DC Motors
+- 2 propellers (clockwise, 1 counterclockwise)
+- Adafruit Ultimate GPS UART
+- Adafruit I2C Digital Compass
 
 ## Code example
 
