@@ -2,6 +2,7 @@ package gopherboat
 
 import (
 	"machine"
+	"time"
 
 	"tinygo.org/x/drivers/wifinina"
 )
@@ -28,4 +29,26 @@ func NewWiFiDevice() *WiFiDevice {
 	return &WiFiDevice{
 		Device: adaptor,
 	}
+}
+
+// ConnectToAP will connect to access point.
+func (wifi *WiFiDevice) ConnectToAP(ssid, pass string) {
+	// wait for wifi hardware to startup if connecting
+	time.Sleep(2 * time.Second)
+
+	println("Connecting to " + ssid)
+	wifi.SetPassphrase(ssid, pass)
+	for st, _ := wifi.GetConnectionStatus(); st != wifinina.StatusConnected; {
+		println("Connection status: " + st.String())
+		time.Sleep(1 * time.Second)
+		st, _ = wifi.GetConnectionStatus()
+	}
+	println("Connected.")
+	time.Sleep(2 * time.Second)
+	ip, _, _, err := wifi.GetIP()
+	for ; err != nil; ip, _, _, err = wifi.GetIP() {
+		println(err.Error())
+		time.Sleep(1 * time.Second)
+	}
+	println(ip.String())
 }
