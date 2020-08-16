@@ -42,14 +42,14 @@ func NewRightShieldMotor() *ShieldMotorDevice {
 // Forward goes forward.
 func (m *ShieldMotorDevice) Forward(s uint16) {
 	m.brake.Low()
-	m.dir.Low()
+	m.dir.High()
 	m.speed.Set(s)
 }
 
 // Backward goes backward.
 func (m *ShieldMotorDevice) Backward(s uint16) {
 	m.brake.Low()
-	m.dir.High()
+	m.dir.Low()
 	m.speed.Set(s)
 }
 
