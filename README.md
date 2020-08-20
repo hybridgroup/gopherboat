@@ -4,12 +4,7 @@ TinyGo-powered bottle boat.
 
 ## Vessel
 
-- 2 or more empty plastic bottles for hull
-- flat plastic sheet to use as deck
-- risers for motors (must be able to lift motors/props high above water)
-- Tie wraps
-- Heavy duty transparent plastic bags
-- Duct tape
+See the "Hull" page at [assembly/hull.md](./assembly/hull.md) for more information about putting together the hull of your Gopherboat.
 
 ## Controller
 
@@ -20,6 +15,8 @@ TinyGo-powered bottle boat.
 - 2 propellers (clockwise, 1 counterclockwise)
 - Adafruit Ultimate GPS UART
 - Adafruit I2C Digital Compass
+
+See the "Wiring" page at [assembly/wiring.md](./assembly/wiring.md) for more information about wiring up your Gopherboat.
 
 ## Code example
 
@@ -54,3 +51,18 @@ func main() {
 	rightmotor.Stop()
 }
 ```
+
+## Getting started
+
+- Install Go 1.15
+- Install TinyGo 0.14.1
+
+## Testing that you can flash the board
+
+You use the `tinygo flash` command to put new software on the Adafruit Metro M4 Airlift board. First plug in your computer's USB port to the Adafruit Metro M4 Airlift board's micro-USB connector.
+
+```
+tinygo flash -target metro-m4-airlift examples/blinky1
+```
+
+This should flash the "blinky" program onto your Metro M4 board. The built-in LED should start blinking every 1/2 second.
