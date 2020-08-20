@@ -4,9 +4,10 @@ package gopherboat
 import "machine"
 
 var (
-	pwmInitComplete = false
-	i2cInitComplete = false
-	spiInitComplete = false
+	pwmInitComplete  = false
+	i2cInitComplete  = false
+	spiInitComplete  = false
+	uartInitComplete = false
 )
 
 // EnsurePWMInit makes sure that the Gopherboat PWM has been initialized, but
@@ -39,5 +40,14 @@ func EnsureSPIInit() {
 			SCK:       machine.NINA_SCK,
 		})
 		spiInitComplete = true
+	}
+}
+
+// EnsureUARTInit makes sure that the Gopherboat UART has been initialized, but
+// is only initialized once.
+func EnsureUARTInit() {
+	if !uartInitComplete {
+		machine.UART1.Configure(machine.UARTConfig{BaudRate: 9600})
+		uartInitComplete = true
 	}
 }
