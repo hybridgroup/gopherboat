@@ -6,14 +6,15 @@ import (
 	"time"
 
 	"github.com/hybridgroup/gopherboat"
+	"github.com/hybridgroup/gopherboat/connect"
 	"tinygo.org/x/drivers/net/mqtt"
 	"tinygo.org/x/drivers/wifinina"
 )
 
 const (
-	ssid   = "YOURSSID"
-	pass   = "YOURPASS"
-	server = "192.168.0.1"
+	ssid   = connect.SSID
+	pass   = connect.PASS
+	server = connect.MQTTBroker
 	topic  = "gopherboat"
 )
 
