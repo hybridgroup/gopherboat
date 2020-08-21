@@ -8,11 +8,12 @@ import (
 
 func main() {
 	compass := gopherboat.NewCompassDevice()
+	time.Sleep(100 * time.Millisecond)
 
 	for {
 		heading := compass.ReadCompass()
-		println(heading)
+		println("Heading: ", heading)
 
-		time.Sleep(1 * time.Second)
+		time.Sleep(100 * time.Millisecond)
 	}
 }
