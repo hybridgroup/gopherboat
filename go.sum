@@ -1,6 +1,8 @@
 github.com/eclipse/paho.mqtt.golang v1.2.0 h1:1F8mhG9+aO5/xpdtFkW4SxOJB67ukuDC3t2y2qayIX0=
 github.com/eclipse/paho.mqtt.golang v1.2.0/go.mod h1:H9keYFcgq3Qr5OUJm/JZI/i6U7joQ8SYLhZwfeOo6Ts=
-tinygo.org/x/drivers v0.13.0 h1:ohzhFiPb/5dcRop3X+Gdvsr6uswmnpfMX9KsAMtgtTM=
-tinygo.org/x/drivers v0.13.0/go.mod h1:mShi1lpVtJFpApkZgwyrzDKHToeGfWIuB08utyHxZ7g=
-tinygo.org/x/drivers v0.13.1-0.20200820063544-ea70fd1809bd h1:QF/BDDPEufuZp+1EbnxM0Ax4IHD0xcU+QBO87U01H7k=
-tinygo.org/x/drivers v0.13.1-0.20200820063544-ea70fd1809bd/go.mod h1:mShi1lpVtJFpApkZgwyrzDKHToeGfWIuB08utyHxZ7g=
+tinygo.org/x/drivers v0.13.1-0.20200820112139-af4efceac1ef h1:yXIWq3I3Ue8QIKMl0NiUv4GlZ4WXYlfRCR9/Gz8+LBY=
+tinygo.org/x/drivers v0.13.1-0.20200820112139-af4efceac1ef/go.mod h1:mShi1lpVtJFpApkZgwyrzDKHToeGfWIuB08utyHxZ7g=
+tinygo.org/x/drivers v0.13.1-0.20200821052441-4f82c06df9be h1:WfyB6r6v9jnaIorsEUG7seRjc9suBLeKNMOdJgOpUvc=
+tinygo.org/x/drivers v0.13.1-0.20200821052441-4f82c06df9be/go.mod h1:mShi1lpVtJFpApkZgwyrzDKHToeGfWIuB08utyHxZ7g=
+tinygo.org/x/drivers v0.13.1-0.20200821081216-35a146d60eca h1:fbbi5uGJrGBySlLSfUNvnF/aSv5N4QRi3mMk1lww5Es=
+tinygo.org/x/drivers v0.13.1-0.20200821081216-35a146d60eca/go.mod h1:mShi1lpVtJFpApkZgwyrzDKHToeGfWIuB08utyHxZ7g=
