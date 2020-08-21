@@ -55,7 +55,19 @@ func main() {
 ## Getting started
 
 - Install Go 1.15
+
+You probably already have this. If not, go install Go 1.15 from here: https://golang.org/dl/
+
 - Install TinyGo 0.14.1
+
+On MacOS you can install TinyGo using Homebrew like this:
+
+```
+brew tap tinygo-org/tools
+brew install tinygo
+```
+
+For more info, see the "quick install" instructions here: https://tinygo.org/getting-started/macos/#quick-install
 
 ## Testing that you can flash the board
 
@@ -66,3 +78,9 @@ tinygo flash -target metro-m4-airlift examples/blinky1
 ```
 
 This should flash the "blinky" program onto your Metro M4 board. The built-in LED should start blinking every 1/2 second.
+
+Now you are ready!
+
+## Examples
+
+Take a look at the "Examples" directory for examples of how to use the various hardware.
