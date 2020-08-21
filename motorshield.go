@@ -16,21 +16,19 @@ const (
 
 // ShieldMotorDevice controls the motors on Gopherboat.
 type ShieldMotorDevice struct {
-	dir, brake machine.Pin
-	speed      machine.PWM
+	dir, brake, speed machine.Pin
 }
 
 // NewShieldMotor returns a new motor device.
 func NewShieldMotor(dir, brake, speed machine.Pin) *ShieldMotorDevice {
 	dir.Configure(machine.PinConfig{Mode: machine.PinOutput})
 	brake.Configure(machine.PinConfig{Mode: machine.PinOutput})
-	s := machine.PWM{speed}
-	s.Configure()
+	speed.Configure(machine.PinConfig{Mode: machine.PinOutput})
 
 	return &ShieldMotorDevice{
 		dir:   dir,
 		brake: brake,
-		speed: s,
+		speed: speed,
 	}
 }
 
@@ -48,18 +46,18 @@ func NewRightShieldMotor() *ShieldMotorDevice {
 func (m *ShieldMotorDevice) Forward(s uint16) {
 	m.brake.Low()
 	m.dir.High()
-	m.speed.Set(s)
+	m.speed.High()
 }
 
 // Backward goes backward.
 func (m *ShieldMotorDevice) Backward(s uint16) {
 	m.brake.Low()
 	m.dir.Low()
-	m.speed.Set(s)
+	m.speed.High()
 }
 
 // Stop the motor.
 func (m *ShieldMotorDevice) Stop() {
-	m.speed.Set(0)
+	m.speed.Low()
 	m.brake.High()
 }
