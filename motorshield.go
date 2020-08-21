@@ -22,10 +22,15 @@ type ShieldMotorDevice struct {
 
 // NewShieldMotor returns a new motor device.
 func NewShieldMotor(dir, brake, speed machine.Pin) *ShieldMotorDevice {
+	dir.Configure(machine.PinConfig{Mode: machine.PinOutput})
+	brake.Configure(machine.PinConfig{Mode: machine.PinOutput})
+	s := machine.PWM{speed}
+	s.Configure()
+
 	return &ShieldMotorDevice{
 		dir:   dir,
 		brake: brake,
-		speed: machine.PWM{speed},
+		speed: s,
 	}
 }
 
