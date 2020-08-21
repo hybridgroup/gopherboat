@@ -6,6 +6,16 @@ import (
 	"tinygo.org/x/drivers/l293x"
 )
 
+const (
+	LeftA1Pin = machine.D12
+	LeftA2Pin = machine.D9
+	LeftEnPin = machine.D3
+
+	RightA1Pin = machine.D13
+	RightA2Pin = machine.D8
+	RightEnPin = machine.D11
+)
+
 // MotorDevice controls the motors on Gopherboat.
 type MotorDevice struct {
 	l293x.PWMDevice
@@ -22,10 +32,10 @@ func NewMotor(a1, a2, en machine.Pin) *MotorDevice {
 
 // NewLeftMotor returns the left motor device.
 func NewLeftMotor() *MotorDevice {
-	return nil
+	return NewMotor(LeftA1Pin, LeftA2Pin, LeftEnPin)
 }
 
 // NewRightMotor returns the right motor device.
 func NewRightMotor() *MotorDevice {
-	return nil
+	return NewMotor(RightA1Pin, RightA2Pin, RightEnPin)
 }
